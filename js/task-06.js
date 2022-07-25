@@ -10,8 +10,20 @@ const inputForm = document.querySelector("#validation-input");
 
 // inputForm.addEventListener("blur", checkInput);
 
+// inputForm.addEventListener("blur", (event) => {
+//   event.target.value.length === Number(inputForm.getAttribute("data-length"))
+//     ? (inputForm.classList.add("valid"), inputForm.classList.remove("invalid"))
+//     : (inputForm.classList.add("invalid"), inputForm.classList.remove("valid"));
+// });
+
 inputForm.addEventListener("blur", (event) => {
-  event.target.value.length === Number(inputForm.getAttribute("data-length"))
-    ? (inputForm.classList.add("valid"), inputForm.classList.remove("invalid"))
-    : (inputForm.classList.add("invalid"), inputForm.classList.remove("valid"));
+  if (
+    event.target.value.length === Number(inputForm.getAttribute("data-length"))
+  ) {
+    inputForm.classList.add("valid");
+    inputForm.classList.remove("invalid");
+  } else {
+    inputForm.classList.add("invalid");
+    inputForm.classList.remove("valid");
+  }
 });
