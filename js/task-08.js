@@ -7,7 +7,8 @@ function formSubmit(event) {
   } = event.currentTarget;
 
   if (email.value === "" || password.value === "") {
-    return console.log("Check the entered data - all fields must be filled! ");
+    // return console.log("Check the entered data - all fields must be filled! ");
+    return alert("Check the entered data - all fields must be filled! ");
   }
   const objForm = `Email: ${email.value}, Password: ${password.value}`;
   //   console.log(`Email: ${email.value}, Password: ${password.value}`);
